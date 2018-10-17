@@ -10,14 +10,14 @@
 
  int subSum(const int *a, int size, int i, int j){
 
-   //a = (int *) malloc(size * sizeof(int));
+   
    int sum = 0;
    int temp = 0;
-   i = i - 1;
-   j = j - 1;
+   j = j+1;
+
+  
    for(i; i < j; i++){
-     sum = a[i] + temp;
-     temp = a[i];
+     sum += a[i+1];
    }
    return sum;
  }
