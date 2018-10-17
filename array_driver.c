@@ -6,21 +6,19 @@
 //int subSum(const int *a, int size, int i, int j);
 int main(int argc, char **argv){
 
-//int *a = NULL;
-int *a[6];
-int k=1;
-for(k=0; k<6; k++){
-  *a[k];
-}
 int size = 6;
-int i = 2;
-int j = 5;
+int i = 0;
+int j = 6;
+int *a = (int *) malloc(size * sizeof(int));
+for(int k=1; k<7; k++){
+  a[k] = k;
+  printf("%d\n",a[k]);
+ }
+ 
+int sum = subSum(a, size, i, j);
 
-int sum = subSum(*a, size, i, j);
-
-printf("%d\n", sum);
+printf("sum: %d\n", sum);
 return 0;
-
 
 }
 /*int subSum(const int *a, int size, int i, int j){
