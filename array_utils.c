@@ -75,59 +75,64 @@ int maxSubArraySum(const int *a, int size){
 }
 
 int containsWithin(const int *a, int size, int x, int i, int j){
-
-   while(a[i] <= j){
-
+   while(i <= j){
+     if(x == a[i]){
+       return 0;
+     }else if(a[i] == size){
+       return 1;
+     }else if(x != a[i]){
+       i++;
      }
+   }
 }
 
-int contains(const int *a, int size, int x){
-
-  size_t size = sizeof(a) / sizeof(a[0]);
-
-  if(size <= 0){
-    printf("Error: Invalid Size Parameter.\n");
-    return 0;
-  }
-
-  for(int i = 0; i < size; i++){
-    if(*a[i] == x){
-      printf("The integer array does conatain %d. \n", x);
-      return 0;
-    }
-  }
-  printf("The integer array does not contain %d. \n", x);
-  return 0;
-}
-
-int isEqual(const int *a, const int *b, int size){
-
-  size_t size = sizeof(a) / sizeof(a[0]);
-
-  if(size <= 0){
-    printf("Error: Invalid Size Parameter.\n");
-    return 0;
-  }
-
-  for(int i = 0; i < size; i++){
-    if(*a[i] != *b[i]){
-      printf("The arrays are not equal. \n");
-      return 0;
-    }
-
-  }
-  printf("The arrays are equal! \n");
-  return 0;
-}
-
-int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
-
-}
-
-int isPermutation(const int *a, int size){
-
-}
-
-int orderStatistic(const int *a, int size, int k){
-
-}
+// int contains(const int *a, int size, int x){
+//
+//   size_t size = sizeof(a) / sizeof(a[0]);
+//
+//   if(size <= 0){
+//     printf("Error: Invalid Size Parameter.\n");
+//     return 0;
+//   }
+//
+//   for(int i = 0; i < size; i++){
+//     if(*a[i] == x){
+//       printf("The integer array does conatain %d. \n", x);
+//       return 0;
+//     }
+//   }
+//   printf("The integer array does not contain %d. \n", x);
+//   return 0;
+// }
+//
+// int isEqual(const int *a, const int *b, int size){
+//
+//   size_t size = sizeof(a) / sizeof(a[0]);
+//
+//   if(size <= 0){
+//     printf("Error: Invalid Size Parameter.\n");
+//     return 0;
+//   }
+//
+//   for(int i = 0; i < size; i++){
+//     if(*a[i] != *b[i]){
+//       printf("The arrays are not equal. \n");
+//       return 0;
+//     }
+//
+//   }
+//   printf("The arrays are equal! \n");
+//   return 0;
+// }
+//
+// int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
+//
+// }
+//
+// int isPermutation(const int *a, int size){
+//
+// }
+//
+// int orderStatistic(const int *a, int size, int k){
+//
+// }

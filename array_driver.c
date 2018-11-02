@@ -11,8 +11,8 @@
 int main(int argc, char **argv){
 //note the following code creates a one deminsional array the formmating is just to fit in a smaller space
 int size = 7;
-// int i = 99;
-// int j = 100;
+int i = 3;
+int j = 6;
 //int *a = (int *) malloc(size * sizeof(int));
 // for(int k=0; k<=size; k++){ //creates integer array from k=x to k=y
 //   a[k] = k;
@@ -40,6 +40,13 @@ printf("totalSum: %d\n", totalSum);
 
 int conSum = maxSubArraySum(a, size);
 printf("conSum: %d\n", conSum);
+int x = 2;
+int conWith = containsWithin(a, size, x, i, j);
+if(conWith == 0){
+  printf("a contains %d\n", x);
+}else if(conWith == 1){
+  printf("a does not contain %d\n", x);
+}
 //free(a);
 return 0;
 }
