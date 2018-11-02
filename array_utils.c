@@ -120,13 +120,13 @@ int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
     while(j < sizeOfB){
       if(a[i] == b[j]){
         j++;
-      }else(a[i] != b[j]){
-        return 0;
+      }else if(a[i] != b[j]){
+        return 1;
       }
       i++;
     }
   }
-  return 1;
+  return 0;
 }
 //
 // int isPermutation(const int *a, int size){

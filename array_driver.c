@@ -11,19 +11,10 @@
 int main(int argc, char **argv){
 //note the following code creates a one deminsional array the formmating is just to fit in a smaller space
 
-int i = 3;
-int j = 6;
-//int *a = (int *) malloc(size * sizeof(int));
-// for(int k=0; k<=size; k++){ //creates integer array from k=x to k=y
-//   a[k] = k;
-//   if(k == size){
-//     printf("%d\n", a[k]);
-//   }else if((k % 10) == 0){
-//     printf("%d\n", a[k]);
-//   } else {
-//     printf("%.2d|",a[k]);
-//   }
-// }
+// int i = 3;
+// int j = 6;
+
+
 
 // int SubSum = subSum(a, size, i, j);
 // if(SubSum == 1){
@@ -33,21 +24,39 @@ int j = 6;
 // }else {
 //   printf("SubSum: %d\n", SubSum);
 // }
-int sizeOfA = 7;
+int *a = NULL;
+int *b = NULL;
+int sizeOfA = 3;
 int sizeOfB = 7;
-int a[] = {6,5,1};
-int b[] = {3, 2, 3, 3, 3, 2, 2, 2}
-// int totalSum = sum(a, size);
-// printf("totalSum: %d\n", totalSum);
-//
-// int conSum = maxSubArraySum(a, size);
-// printf("conSum: %d\n", conSum);
-// int x = -1;
-int con = containsSameElements(a, int sizeOfA, b, sizeOfB);
+a = (int *) malloc(sizeOfA * sizeof(int));
+b = (int *) malloc(sizeOfB * sizeof(int));
+int y[] = {2,3,3};
+int z[] = {3, 2, 3, 3, 3, 2, 2, 2};
+for(int k=0; k<=sizeOfA ; k++){ //creates integer array from k=x to k=y
+  a[k] = y[k];
+  if(k == sizeOfA){
+    printf("%d\n", a[k]);
+  }else if((k % 10) == 0){
+    printf("%d\n", a[k]);
+  } else {
+    printf("%.2d|",a[k]);
+  }
+}
+for(int k=0; k<=sizeOfB; k++){ //creates integer array from k=x to k=y
+  b[k] = z[k];
+  if(k == sizeOfB){
+    printf("%d\n", a[k]);
+  }else if((k % 10) == 0){
+    printf("%d\n", a[k]);
+  } else {
+    printf("%.2d|",a[k]);
+  }
+}
+int con = containsSameElements(a, sizeOfA, b, sizeOfB);
 if(con == 1){
-  printf("same \n", x);
+  printf("same \n");
 }else if(con == 0){
-  printf(" NOt same  \n", x);
+  printf(" Not same  \n");
 }
 //free(a);
 return 0;
