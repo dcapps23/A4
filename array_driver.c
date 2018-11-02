@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv){
 //note the following code creates a one deminsional array the formmating is just to fit in a smaller space
-int size = 7;
+
 int i = 3;
 int j = 6;
 //int *a = (int *) malloc(size * sizeof(int));
@@ -33,19 +33,21 @@ int j = 6;
 // }else {
 //   printf("SubSum: %d\n", SubSum);
 // }
+int sizeOfA = 7;
+int sizeOfB = 7;
+int a[] = {6,5,1};
+int b[] = {3, 2, 3, 3, 3, 2, 2, 2}
+// int totalSum = sum(a, size);
+// printf("totalSum: %d\n", totalSum);
 //
-int a[] = {-3, -2, -1, 0, 1, 2, 3};
-int totalSum = sum(a, size);
-printf("totalSum: %d\n", totalSum);
-
-int conSum = maxSubArraySum(a, size);
-printf("conSum: %d\n", conSum);
-int x = 2;
-int conWith = containsWithin(a, size, x, i, j);
-if(conWith == 0){
-  printf("a contains %d\n", x);
-}else if(conWith == 1){
-  printf("a does not contain %d\n", x);
+// int conSum = maxSubArraySum(a, size);
+// printf("conSum: %d\n", conSum);
+// int x = -1;
+int con = containsSameElements(a, int sizeOfA, b, sizeOfB);
+if(con == 1){
+  printf("same \n", x);
+}else if(con == 0){
+  printf(" NOt same  \n", x);
 }
 //free(a);
 return 0;

@@ -77,57 +77,57 @@ int maxSubArraySum(const int *a, int size){
 int containsWithin(const int *a, int size, int x, int i, int j){
    while(i <= j){
      if(x == a[i]){
-       return 0;
-     }else if(a[i] == size){
        return 1;
+     }else if(a[i] == size){
+       return 0;
      }else if(x != a[i]){
        i++;
      }
    }
 }
 
-// int contains(const int *a, int size, int x){
-//
-//   size_t size = sizeof(a) / sizeof(a[0]);
-//
-//   if(size <= 0){
-//     printf("Error: Invalid Size Parameter.\n");
-//     return 0;
-//   }
-//
-//   for(int i = 0; i < size; i++){
-//     if(*a[i] == x){
-//       printf("The integer array does conatain %d. \n", x);
-//       return 0;
-//     }
-//   }
-//   printf("The integer array does not contain %d. \n", x);
-//   return 0;
-// }
-//
-// int isEqual(const int *a, const int *b, int size){
-//
-//   size_t size = sizeof(a) / sizeof(a[0]);
-//
-//   if(size <= 0){
-//     printf("Error: Invalid Size Parameter.\n");
-//     return 0;
-//   }
-//
-//   for(int i = 0; i < size; i++){
-//     if(*a[i] != *b[i]){
-//       printf("The arrays are not equal. \n");
-//       return 0;
-//     }
-//
-//   }
-//   printf("The arrays are equal! \n");
-//   return 0;
-// }
-//
-// int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
-//
-// }
+int contains(const int *a, int size, int x){
+  if(size <= 0){
+    printf("Error: Invalid Size Parameter.\n");
+  }else{
+    int i = 0;
+    int j = size;
+    return containsWithin(a, size, x, i, j);
+  }
+}
+
+int isEqual(const int *a, const int *b, int size){
+  if(size == 0){
+    printf("Error: Invalid Size Parameter.\n");
+  //TODO: add erro checking to see if they are the same size
+  }else{
+    int i = 0;
+    while(i <= size){
+      if(a[i] == b[i]){
+      i++;
+    }else if(a[i] != b[i]){
+      return 1;
+    }
+    }
+      return 0;
+    }
+  }
+
+int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
+  int i = 0;
+  int j = 0;
+  while(i < sizeOfA){
+    while(j < sizeOfB){
+      if(a[i] == b[j]){
+        j++;
+      }else(a[i] != b[j]){
+        return 0;
+      }
+      i++;
+    }
+  }
+  return 1;
+}
 //
 // int isPermutation(const int *a, int size){
 //
