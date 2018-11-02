@@ -9,7 +9,7 @@
 #include "array_utils.h"
 
 /*
-// this function takes an array (a) and finds the sum between its ith and jth elements
+* this function takes an array (a) and finds the sum between its ith and jth elements
 */
 int subSum(const int *a, int size, int i, int j){
    if(i < 0 || i > size) {
@@ -26,7 +26,9 @@ int subSum(const int *a, int size, int i, int j){
    }
    return sum;
 }
-
+/*
+* finds the sum of every element in an array
+*/
 int sum(const int *a, int size){
    int sum = 0;
    int temp = 0;
@@ -36,12 +38,15 @@ int sum(const int *a, int size){
      temp = sum;
      i++;
    }
-   return sum;
+  return sum;
 }
-//
-// int maxSubArraySum(const int *a, int size){
-//
-// }
+/*
+* finds the sum of the largest contiguous subarray or array a
+*/
+int maxSubArraySum(const int *a, int size){
+  
+return sum;
+}
 //
 // int containsWithin(const int *a, int size, int x, int i, int j){
 //
