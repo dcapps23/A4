@@ -1,4 +1,9 @@
-
+/*
+ * Authors: Daryn Capps and Jacob Sinsel
+ *
+ * Driver function for the array thing
+ *
+ */
 #include<stdlib.h>
 #include<stdio.h>
 
@@ -14,7 +19,7 @@ for(int k=1; k<7; k++){
   a[k] = k;
   printf("%d\n",a[k]);
  }
- 
+
 int sum = subSum(a, size, i, j);
 
 printf("sum: %d\n", sum);
