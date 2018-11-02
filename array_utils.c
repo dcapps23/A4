@@ -8,8 +8,15 @@
 #include <stdlib.h>
 #include "array_utils.h"
 
+/*
+// this function takes an array (a) and finds the sum between its ith and jth elements
+*/
 int subSum(const int *a, int size, int i, int j){
-  //TODO: add error checking to make sure that i and j are valid inputs
+   if(i < 0 || i > size) {
+     return 1;
+   } else if(j < 0 || j > size) {
+     return 2;
+   }
    int sum = 0;
    int temp = 0;
    while(i<=j){
@@ -19,17 +26,18 @@ int subSum(const int *a, int size, int i, int j){
    }
    return sum;
 }
-//
-// int sum(const int *a, int size){
-//    int sum = 0;
-//    int temp = 0;
-//    int i =0;
-//    for(i = 0  ; i <= size; i++){
-//      sum += a[i];
-//      //temp = a[i];
-//    }
-//    return sum;
-// }
+
+int sum(const int *a, int size){
+   int sum = 0;
+   int temp = 0;
+   int i = 0;
+   while(i<=size){
+     sum = a[i] + temp;
+     temp = sum;
+     i++;
+   }
+   return sum;
+}
 //
 // int maxSubArraySum(const int *a, int size){
 //

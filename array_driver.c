@@ -6,35 +6,29 @@
  */
 #include<stdlib.h>
 #include<stdio.h>
-
 #include"array_utils.h"
-//int subSum(const int *a, int size, int i, int j);
+
 int main(int argc, char **argv){
 
-int size = 6;
-int i = 0;
-int j = 6;
+int size = 100;
+int i = 99;
+int j = 100;
 int *a = (int *) malloc(size * sizeof(int));
-for(int k=1; k<7; k++){
+for(int k=0; k<=100; k++){ //creates integer array from 0 to 6
   a[k] = k;
-  printf("%d\n",a[k]);
+  printf("%d,",a[k]);
  }
 
-int sum = subSum(a, size, i, j);
-
-printf("sum: %d\n", sum);
-return 0;
-
+int SubSum = subSum(a, size, i, j);
+if(SubSum == 1){
+  printf("Invalid i input!");
+}else if(SubSum == 2){
+  printf("Invalid j input!");
+}else {
+  printf("SubSum: %d\n", SubSum);
 }
-/*int subSum(const int *a, int size, int i, int j){
 
-  //a = (int *) malloc(size * sizeof(int));
-  int sum = 0;
-  int temp = 0;
-
-  for(i = i - 1; i <= j; i++){
-    sum = a[i] + temp;
-    temp = a[i];
-  }
-  return sum;
-} */
+int totalSum = sum(a, size);
+printf("totalSum: %d\n", totalSum);
+return 0;
+}
