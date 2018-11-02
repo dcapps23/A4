@@ -44,64 +44,90 @@ int sum(const int *a, int size){
 * finds the sum of the largest contiguous subarray or array a
 */
 int maxSubArraySum(const int *a, int size){
-  
-return sum;
+  int i = 0;
+  int j = 0;
+  int sum = 0;
+  int temp = 0;
+  while(j<=size){
+    temp = subSum(a, size, i, j);
+    if(temp > sum){
+      sum = temp;
+      j++;
+    }else if(temp == sum){
+      sum = temp;
+      j++;
+    }else if(temp < sum){
+      j = size;
+      while(i<=size){
+        temp = subSum(a, size, i, j);
+        if(temp > sum){
+          sum = temp;
+          i++;
+        }else if(temp == sum){
+          sum = temp;
+          i++;
+        }else if(temp < sum){
+          return sum;
+        }
+      }
+    }
+  }
 }
-//
-// int containsWithin(const int *a, int size, int x, int i, int j){
-//
-//    while(a[i] <= j){
-//
-//      }
-// }
-//
-// int contains(const int *a, int size, int x){
-//
-//   size_t size = sizeof(a) / sizeof(a[0]);
-//
-//   if(size <= 0){
-//     printf("Error: Invalid Size Parameter.\n");
-//     return 0;
-//   }
-//
-//   for(int i = 0; i < size; i++){
-//     if(*a[i] == x){
-//       printf("The integer array does conatain %d. \n", x);
-//       return 0;
-//     }
-//   }
-//   printf("The integer array does not contain %d. \n", x);
-//   return 0;
-// }
-//
-// int isEqual(const int *a, const int *b, int size){
-//
-//   size_t size = sizeof(a) / sizeof(a[0]);
-//
-//   if(size <= 0){
-//     printf("Error: Invalid Size Parameter.\n");
-//     return 0;
-//   }
-//
-//   for(int i = 0; i < size; i++){
-//     if(*a[i] != *b[i]){
-//       printf("The arrays are not equal. \n");
-//       return 0;
-//     }
-//
-//   }
-//   printf("The arrays are equal! \n");
-//   return 0;
-// }
-//
-// int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
-//
-// }
-//
-// int isPermutation(const int *a, int size){
-//
-// }
-//
-// int orderStatistic(const int *a, int size, int k){
-//
-// }
+
+int containsWithin(const int *a, int size, int x, int i, int j){
+
+   while(a[i] <= j){
+
+     }
+}
+
+int contains(const int *a, int size, int x){
+
+  size_t size = sizeof(a) / sizeof(a[0]);
+
+  if(size <= 0){
+    printf("Error: Invalid Size Parameter.\n");
+    return 0;
+  }
+
+  for(int i = 0; i < size; i++){
+    if(*a[i] == x){
+      printf("The integer array does conatain %d. \n", x);
+      return 0;
+    }
+  }
+  printf("The integer array does not contain %d. \n", x);
+  return 0;
+}
+
+int isEqual(const int *a, const int *b, int size){
+
+  size_t size = sizeof(a) / sizeof(a[0]);
+
+  if(size <= 0){
+    printf("Error: Invalid Size Parameter.\n");
+    return 0;
+  }
+
+  for(int i = 0; i < size; i++){
+    if(*a[i] != *b[i]){
+      printf("The arrays are not equal. \n");
+      return 0;
+    }
+
+  }
+  printf("The arrays are equal! \n");
+  return 0;
+}
+
+int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
+
+}
+
+int isPermutation(const int *a, int size){
+
+}
+
+int orderStatistic(const int *a, int size, int k){
+
+}
