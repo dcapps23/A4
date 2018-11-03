@@ -30,7 +30,7 @@ int sizeOfA = 3;
 int sizeOfB = 7;
 a = (int *) malloc(sizeOfA * sizeof(int));
 b = (int *) malloc(sizeOfB * sizeof(int));
-int y[] = {2,3,3};
+int y[] = {0,2,1,3,6,5,4};
 int z[] = {3, 2, 3, 3, 3, 2, 2, 2};
 for(int k=0; k<=sizeOfA ; k++){ //creates integer array from k=x to k=y
   a[k] = y[k];
@@ -42,7 +42,7 @@ for(int k=0; k<=sizeOfA ; k++){ //creates integer array from k=x to k=y
     printf("%.2d|",a[k]);
   }
 }
-for(int k=0; k<=sizeOfB; k++){ //creates integer array from k=x to k=y
+for(int k=0; k<=sizeOfB; k++){  //creates integer array from k=x to k=y
   b[k] = z[k];
   if(k == sizeOfB){
     printf("%d\n", a[k]);
@@ -52,11 +52,12 @@ for(int k=0; k<=sizeOfB; k++){ //creates integer array from k=x to k=y
     printf("%.2d|",a[k]);
   }
 }
-int con = containsSameElements(a, sizeOfA, b, sizeOfB);
+int size = sizeOfA;
+int con = isPermutation(a, size);
 if(con == 1){
-  printf("same \n");
+  printf("is Permutation \n");
 }else if(con == 0){
-  printf(" Not same  \n");
+  printf("aint permutilation %d\n", con);
 }
 //free(a);
 return 0;

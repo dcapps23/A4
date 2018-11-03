@@ -128,10 +128,32 @@ int containsSameElements(const int *a, int sizeOfA, const int *b, int sizeOfB){
   }
   return 0;
 }
-//
-// int isPermutation(const int *a, int size){
-//
-// }
+
+int isPermutation(const int *a, int size){
+  int *arr = NULL;
+  arr = (int*)malloc(size * sizeof(int));
+
+  for(int i = 0; i <= size; i++){
+    arr[i] = i;
+  }
+
+int result = containsSameElements(a, size, arr, size);
+if(result == 0){
+  return 3;
+} else if(result == 1){
+  int k = j+1;
+  for(int j = 0; j <= size; j++){
+    for(k ; k <= size; k++){
+      if(a[j] == a[k]){
+        return 3;
+      }
+    }
+  }
+  return 1;
+}
+return 1;
+}
+
 //
 // int orderStatistic(const int *a, int size, int k){
 //
