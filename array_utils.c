@@ -139,22 +139,41 @@ int isPermutation(const int *a, int size){
 
 int result = containsSameElements(a, size, arr, size);
 if(result == 0){
+  free(arr);
   return 3;
 } else if(result == 1){
+  int j = 0;
   int k = j+1;
   for(int j = 0; j <= size; j++){
     for(k ; k <= size; k++){
       if(a[j] == a[k]){
+        free(arr);
         return 3;
       }
     }
   }
+  free(arr);
   return 1;
 }
 return 1;
 }
 
-//
-// int orderStatistic(const int *a, int size, int k){
-//
+// void selectionSort(int *a, int size) {
+//  int i, j, min_index;
+//  for(i=0; i<size-1; i++) {
+//    min_index = i;
+//  for(j=i+1; j<size; j++) {
+//    if(a[min_index] > a[j]) {
+//      min_index = j;
+//     }
+//   }
+//  //swap
+//  int t = a[i];
+//  a[i] = a[min_index];
+//  a[min_index] = t;
+//  }
 // }
+
+int orderStatistic(const int *a, int size, int k){
+  return 0;
+}
